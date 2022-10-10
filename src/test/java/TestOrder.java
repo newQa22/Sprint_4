@@ -56,9 +56,8 @@ public class TestOrder {
         rentDataPage.confirmOrder();
         rentDataPage.checkOrdered();
     }
-
-        @After
-    public void cleanUp() {
+     @After
+        public void cleanUp() {
         driver.quit();
-    }
+   }
 }

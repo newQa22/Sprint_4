@@ -17,6 +17,10 @@ public class ConsumerDataPage {
     private static final By INPUT_PHONE = By.xpath("//input[@placeholder = '* Телефон: на него позвонит курьер']");
     //Кнопка "Далее"
     private static final By NEXT_BUTTON = By.cssSelector("div.Order_NextButton__1_rCA  button");
+    String name = "Семен";
+    String surname = "Семенов";
+    String address = "Москва";
+    String phone = "89009009090";
 
     private final WebDriver driver;
 
@@ -29,17 +33,18 @@ public class ConsumerDataPage {
 
     //Заполнение поля "Имя"
     public void inputConsumerData(){
-        driver.findElement(INPUT_NAME).sendKeys("Семен");
+
+        driver.findElement(INPUT_NAME).sendKeys(name);
     //Заполнение поля "Фамилия"
-        driver.findElement(INPUT_SURNAME).sendKeys("Семенов");
+        driver.findElement(INPUT_SURNAME).sendKeys(surname);
         //Заполнение поля "Адрес"
-        driver.findElement(INPUT_ADDRESS).sendKeys("Москва");
+        driver.findElement(INPUT_ADDRESS).sendKeys(address);
         //Заполнение поля "Станция метро"
         driver.findElement(INPUT_STATION).click();
         driver.findElement(INPUT_STATION).sendKeys(Keys.DOWN);
         driver.findElement(INPUT_STATION).sendKeys(Keys.ENTER);
         //Заполнение поля "Телефон"
-        driver.findElement(INPUT_PHONE).sendKeys("89009009090");
+        driver.findElement(INPUT_PHONE).sendKeys(phone);
     }
     //Кликнуть "Далее"
     public void checkNext(){

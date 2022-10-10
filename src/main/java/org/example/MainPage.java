@@ -37,47 +37,47 @@ public class MainPage {
     // Текст ответа на 1 вопрос
     private static final String TEXT_ANSWER_PAID = "Сутки — 400 рублей. Оплата курьеру — наличными или картой.";
     //Локатор ответа 1
-    private static final By ANSWER_PAID = By.xpath("//div[1]/div[2]/p");
+    private static final By ANSWER_PAID = By.xpath("//div[@class = 'accordion__panel']/p[text()='Сутки — 400 рублей. Оплата курьеру — наличными или картой.']");
 
     // Текст ответа на 2 вопрос
     private static final String TEXT_ANSWER_SOME_SCOOTER = "Пока что у нас так: один заказ — один самокат. Если хотите покататься с друзьями, можете просто сделать несколько заказов — один за другим.";
     //Локатор ответа 2
-    private static final By ANSWER_SOME_SCOOTER = By.xpath("//div[2]/div[2]/p");
+    private static final By ANSWER_SOME_SCOOTER = By.xpath("//p[text() = 'Пока что у нас так: один заказ — один самокат. Если хотите покататься с друзьями, можете просто сделать несколько заказов — один за другим.']");
 
     // Текст ответа на 3 вопрос
     private static final String  TEXT_RENT_TIME = "Допустим, вы оформляете заказ на 8 мая. Мы привозим самокат 8 мая в течение дня. Отсчёт времени аренды начинается с момента, когда вы оплатите заказ курьеру. Если мы привезли самокат 8 мая в 20:30, суточная аренда закончится 9 мая в 20:30.";
     // Локатор ответа 3
-    private static final By RENT_TIME = By.xpath("//*[@id=\"accordion__panel-2\"]/p");
+    private static final By RENT_TIME = By.xpath("//p[text() = 'Допустим, вы оформляете заказ на 8 мая. Мы привозим самокат 8 мая в течение дня. Отсчёт времени аренды начинается с момента, когда вы оплатите заказ курьеру. Если мы привезли самокат 8 мая в 20:30, суточная аренда закончится 9 мая в 20:30.']");
 
     // Текст ответа на 4 вопрос
     private static final String TEXT_TODAY_SCOOTER = "Только начиная с завтрашнего дня. Но скоро станем расторопнее.";
     //Локатор ответа 4
-    private static final By TODAY_SCOOTER = By.xpath("//*[@id=\"accordion__panel-3\"]/p");
+    private static final By TODAY_SCOOTER = By.xpath("//p[text() = 'Только начиная с завтрашнего дня. Но скоро станем расторопнее.']");
 
     // Текст ответа на 5 вопрос
     private static final String TEXT_CHANGE_TIME = "Пока что нет! Но если что-то срочное — всегда можно позвонить в поддержку по красивому номеру 1010.";
     //Локатор ответа 5
-    private static final By CHANGE_TIME = By.xpath("//*[@id=\"accordion__panel-4\"]/p");
+    private static final By CHANGE_TIME = By.xpath("//p[text() = 'Пока что нет! Но если что-то срочное — всегда можно позвонить в поддержку по красивому номеру 1010.']");
 
     // Текст ответа на 6 вопрос
     private static final String TEXT_CHARGER_SCOOTER = "Самокат приезжает к вам с полной зарядкой. Этого хватает на восемь суток — даже если будете кататься без передышек и во сне. Зарядка не понадобится.";
     // Локатор ответа 6
-    private static final By CHARGER_SCOOTER = By.xpath("//*[@id=\"accordion__panel-5\"]/p");
+    private static final By CHARGER_SCOOTER = By.xpath("//p[text() = 'Самокат приезжает к вам с полной зарядкой. Этого хватает на восемь суток — даже если будете кататься без передышек и во сне. Зарядка не понадобится.']");
 
     // Текст ответа на 7 вопрос
     private static final String TEXT_CANCELLED_ORDER = "Да, пока самокат не привезли. Штрафа не будет, объяснительной записки тоже не попросим. Все же свои.";
     // Локатор ответа 7
-    private static final By CANCELLED_ORDER = By.xpath("//*[@id=\"accordion__panel-6\"]/p");
+    private static final By CANCELLED_ORDER = By.xpath("//p[text() = 'Да, пока самокат не привезли. Штрафа не будет, объяснительной записки тоже не попросим. Все же свои.']");
 
     // Текст ответа на 8 вопрос
     private static final String TEXT_DELIVERY_OUTSIDE = "Да, обязательно. Всем самокатов! И Москве, и Московской области.";
     //локатор ответа 8
-    private static final By DELIVERY_OUTSIDE = By.xpath("//*[@id=\"accordion__panel-7\"]/p");
+    private static final By DELIVERY_OUTSIDE = By.xpath("//p[text() = 'Да, обязательно. Всем самокатов! И Москве, и Московской области.']");
 
     //Кнопка "Заказать" вверху страницы
-    private static final By CHECK_ORDER_BUTTON_UP = By.xpath("//div[2]/button[1]");
+    private static final By CHECK_ORDER_BUTTON_UP = By.xpath("//button[@class = 'Button_Button__ra12g' and text() = 'Заказать']");
     //Кнопка "Заказать" внизу страницы
-    private static final By CHECK_ORDER_BUTTON_DOWN = By.xpath("//div[2]/div[5]/button");
+    private static final By CHECK_ORDER_BUTTON_DOWN = By.xpath("//button[@class = 'Button_Button__ra12g Button_Middle__1CSJM' and text() = 'Заказать']");
 
     public MainPage(WebDriver driver) {
         this.driver = driver;

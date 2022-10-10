@@ -9,16 +9,16 @@ public class RentDataPage {
     //Страница"Про аренду". Поле "Когда привезти самокат"
     private static final By INPUT_WHEN_DELIVERED = By.cssSelector("div.react-datepicker__input-container  input");
     //Страница"Про аренду". Поле "Срок аренды"
-    private static final By INPUT_TIME_RENT = By.xpath("//*[@id=\"root\"]/div/div[2]/div[2]/div[2]/div/div[1]");
+    private static final By INPUT_TIME_RENT = By.xpath("//div[@class = 'Dropdown-placeholder' and text() = '* Срок аренды']");
     //Выпадающий список
-    private static final By SELECT_TIME = By.xpath("//div[2]/div[2]/div[2]/div[2]/div[1]");
+    private static final By SELECT_TIME = By.xpath("//div[@class = 'Dropdown-menu']/div[@class = 'Dropdown-option' and text()='сутки']");
     // Страница"Про аренду". Кнопка вверху "Заказать"
     private static final By RENT_ORDER_BUTTON_UP = By.xpath("//div[@ class= 'Header_Nav__AGCXC']/button[text()='Заказать']");
     //Страница"Про аренду". Кнопка внизу "Заказать"
     private static final By RENT_ORDER_BUTTON_DOWN = By.xpath("//div[@class='Order_Buttons__1xGrp']/button[text()='Заказать']");
 
     // Подтверждение оформления заказа. Кнопка "Да"
-    private static final By CONFIRM_ORDER_BUTTON = By.xpath("//div[5]/div[2]/button[text()='Да']");
+    private static final By CONFIRM_ORDER_BUTTON = By.xpath("//button[@class = 'Button_Button__ra12g Button_Middle__1CSJM' and text() = 'Да']");
     //
     private static final By MODAL_ORDERED = By.xpath("//div[@class='Order_ModalHeader__3FDaJ']");
     private static final String TEXT_DELIVERY_ORDERED = "Заказ оформлен";
@@ -29,7 +29,7 @@ public class RentDataPage {
     }
     //Заполнение поля "Когда привезти самокат" раздел "Про аренду"
     public void inputRentData(){
-        driver.findElement(INPUT_WHEN_DELIVERED).sendKeys("07.10.2022");
+        driver.findElement(INPUT_WHEN_DELIVERED).click();
         driver.findElement(INPUT_WHEN_DELIVERED).sendKeys(Keys.ENTER);
         driver.findElement(INPUT_TIME_RENT).click();
         driver.findElement(SELECT_TIME).click();
