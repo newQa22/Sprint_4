@@ -16,7 +16,6 @@ public class TestOrder {
     public void setUp() {
         driver = new ChromeDriver();
     }
-
     @Test
     public void checkOrderUpButton() {
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
@@ -28,15 +27,12 @@ public class TestOrder {
         ConsumerDataPage consumerDataPage = new ConsumerDataPage(driver);
         consumerDataPage.inputConsumerData();
         consumerDataPage.checkNext();
-
-
         RentDataPage rentDataPage = new RentDataPage(driver);
         rentDataPage.inputRentData();
         rentDataPage.checkOrderButtonUp();
         rentDataPage.confirmOrder();
         rentDataPage.checkOrdered();
     }
-
     @Test
     public void checkOrderDownButton() {
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
@@ -45,11 +41,9 @@ public class TestOrder {
         mainPage.confirmCookie();
         mainPage.scrollPage();
         mainPage.checkOrderButtonDown();
-
         ConsumerDataPage consumerDataPage = new ConsumerDataPage(driver);
         consumerDataPage.inputConsumerData();
         consumerDataPage.checkNext();
-
         RentDataPage rentDataPage = new RentDataPage(driver);
         rentDataPage.inputRentData();
         rentDataPage.checkOrderButtonDown();

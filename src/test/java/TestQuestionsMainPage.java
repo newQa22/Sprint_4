@@ -4,18 +4,15 @@ import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-
 import java.util.concurrent.TimeUnit;
 
 
 public class TestQuestionsMainPage {
     private WebDriver driver;
-
     @Before
     public void setUp() {
         driver = new ChromeDriver();
     }
-
     @Test
     public void checkQuestionFirst() {
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
@@ -26,7 +23,6 @@ public class TestQuestionsMainPage {
         mainPage.clickFirstQuestion();
         mainPage.checkFirstAnswerText();
     }
-
     @Test
     public void checkQuestionSecond(){
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
@@ -37,7 +33,6 @@ public class TestQuestionsMainPage {
         mainPage.clickSecondQuestion();
         mainPage.checkSecondAnswerText();
     }
-
     @Test
     public void checkQuestionThird(){
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
@@ -48,7 +43,6 @@ public class TestQuestionsMainPage {
         mainPage.clickThirdQuestion();
         mainPage.checkThirdAnswerText();
     }
-
     @Test
     public void checkQuestionFourth(){
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
@@ -59,7 +53,6 @@ public class TestQuestionsMainPage {
         mainPage.clickFourthQuestion();
         mainPage.checkFourthAnswerText();
     }
-
     @Test
     public void checkQuestionFifth(){
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
@@ -70,7 +63,6 @@ public class TestQuestionsMainPage {
         mainPage.clickFifthQuestion();
         mainPage.checkFifthAnswerText();
     }
-
     @Test
     public void checkQuestionSixth(){
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
@@ -81,7 +73,6 @@ public class TestQuestionsMainPage {
         mainPage.clickSixthQuestion();
         mainPage.checkSixthAnswerText();
     }
-
     @Test
     public void checkQuestionSeventh(){
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
@@ -92,7 +83,6 @@ public class TestQuestionsMainPage {
         mainPage.clickSeventhQuestion();
         mainPage.checkSeventhAnswerText();
     }
-
     @Test
     public void checkQuestionEighth(){
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
@@ -103,7 +93,6 @@ public class TestQuestionsMainPage {
         mainPage.clickEighthQuestion();
         mainPage.checkEighthAnswerText();
     }
-
     @After
     public void cleanUp() {
         driver.quit();

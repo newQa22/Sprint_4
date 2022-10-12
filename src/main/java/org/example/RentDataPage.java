@@ -7,46 +7,42 @@ import org.testng.Assert;
 
 public class RentDataPage {
     //Страница"Про аренду". Поле "Когда привезти самокат"
-    private static final By INPUT_WHEN_DELIVERED = By.cssSelector("div.react-datepicker__input-container  input");
+    private By inputWhenDelivered = By.cssSelector("div.react-datepicker__input-container  input");
     //Страница"Про аренду". Поле "Срок аренды"
-    private static final By INPUT_TIME_RENT = By.xpath("//div[@class = 'Dropdown-placeholder' and text() = '* Срок аренды']");
+    private  By inputTimeRent = By.xpath("//div[@class = 'Dropdown-placeholder' and text() = '* Срок аренды']");
     //Выпадающий список
-    private static final By SELECT_TIME = By.xpath("//div[@class = 'Dropdown-menu']/div[@class = 'Dropdown-option' and text()='сутки']");
+    private  By selectTime = By.xpath("//div[@class = 'Dropdown-menu']/div[@class = 'Dropdown-option' and text()='сутки']");
     // Страница"Про аренду". Кнопка вверху "Заказать"
-    private static final By RENT_ORDER_BUTTON_UP = By.xpath("//div[@ class= 'Header_Nav__AGCXC']/button[text()='Заказать']");
+    private  By rentOrderButtonUp = By.xpath("//div[@ class= 'Header_Nav__AGCXC']/button[text()='Заказать']");
     //Страница"Про аренду". Кнопка внизу "Заказать"
-    private static final By RENT_ORDER_BUTTON_DOWN = By.xpath("//div[@class='Order_Buttons__1xGrp']/button[text()='Заказать']");
-
+    private static final By rentOrderButtonDown = By.xpath("//div[@class='Order_Buttons__1xGrp']/button[text()='Заказать']");
     // Подтверждение оформления заказа. Кнопка "Да"
-    private static final By CONFIRM_ORDER_BUTTON = By.xpath("//button[@class = 'Button_Button__ra12g Button_Middle__1CSJM' and text() = 'Да']");
+    private  By confirmOrderButton = By.xpath("//button[@class = 'Button_Button__ra12g Button_Middle__1CSJM' and text() = 'Да']");
     //
-    private static final By MODAL_ORDERED = By.xpath("//div[@class='Order_ModalHeader__3FDaJ']");
+    private  By modalOrdered = By.xpath("//div[@class='Order_ModalHeader__3FDaJ']");
     private static final String TEXT_DELIVERY_ORDERED = "Заказ оформлен";
     private final WebDriver driver;
-
     public RentDataPage(WebDriver driver) {
         this.driver = driver;
     }
     //Заполнение поля "Когда привезти самокат" раздел "Про аренду"
     public void inputRentData(){
-        driver.findElement(INPUT_WHEN_DELIVERED).click();
-        driver.findElement(INPUT_WHEN_DELIVERED).sendKeys(Keys.ENTER);
-        driver.findElement(INPUT_TIME_RENT).click();
-        driver.findElement(SELECT_TIME).click();
+        driver.findElement(inputWhenDelivered).click();
+        driver.findElement(inputWhenDelivered).sendKeys(Keys.ENTER);
+        driver.findElement(inputTimeRent).click();
+        driver.findElement(selectTime).click();
         }
     public void checkOrderButtonUp(){
-        driver.findElement(RENT_ORDER_BUTTON_UP).click();
+        driver.findElement(rentOrderButtonUp).click();
     }
     public void confirmOrder(){
-        driver.findElement(CONFIRM_ORDER_BUTTON).click();
+        driver.findElement(confirmOrderButton).click();
     }
     public void checkOrdered(){
-        String actual = driver.findElement(MODAL_ORDERED).getText();
+        String actual = driver.findElement(modalOrdered).getText();
         Assert.assertEquals(actual, TEXT_DELIVERY_ORDERED);
     }
-
     public void checkOrderButtonDown(){
-        driver.findElement(RENT_ORDER_BUTTON_DOWN).click();
-
+        driver.findElement(rentOrderButtonDown).click();
     }
 }
